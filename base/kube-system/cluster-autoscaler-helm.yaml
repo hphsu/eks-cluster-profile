@@ -4,7 +4,7 @@ metadata:
   name: cluster-autoscaler
   namespace: kube-system
 spec:
-  releaseName: cluster-autoscaler-chart
+  releaseName: cluster-autoscaler
   targetNamespace: kube-system
   chart:
     repository: https://kubernetes.github.io/autoscaler
@@ -41,15 +41,14 @@ spec:
     rbac:
       create: true
       pspEnabled: true
-#    expanderPriorities:
-#      priorities: |-
-#        10:
-#          - .*on-demand-medium.*
-#        20:
-#          - .*on-demand-large.*
-#        30:
-#          - .*-nodegroup-spot-medium.*
-#        40:
-#          - .*-nodegroup-spot-large.*
-#        50:
-#          - .*-nodegroup-spot-r5-large.*
+    expanderPriorities:
+        10:
+          - .*on-demand-medium.*
+        20:
+          - .*on-demand-large.*
+        30:
+          - .*-nodegroup-spot-medium.*
+        40:
+          - .*-nodegroup-spot-large.*
+        50:
+          - .*-nodegroup-spot-r5-large.*
