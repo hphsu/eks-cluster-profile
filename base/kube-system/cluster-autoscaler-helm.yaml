@@ -7,9 +7,9 @@ spec:
   releaseName: cluster-autoscaler
   targetNamespace: kube-system
   chart:
-    repository: https://charts.helm.sh/stable
-    name: cluster-autoscaler
-    version: 8.0.0
+    repository: https://kubernetes.github.io/autoscaler
+    name: cluster-autoscaler-chart
+    version: 1.1.1
   values:
     podAnnotations:
       "prometheus.io/scrape": "true"
