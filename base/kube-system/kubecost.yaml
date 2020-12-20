@@ -6,12 +6,25 @@ metadata:
   annotations:
     filter.fluxcd.io/chart-image: 'semver:~0'
     fluxcd.io/automated: 'true'
-  name: 'kubecost'
+  name: cost-analyzer
   namespace: 'kube-system'
 spec:
   chart:
     name: 'cost-analyzer'
     repository: 'https://kubecost.github.io/cost-analyzer/'
-    version: '1.69.0'
-  releaseName: 'kubecost'
-  values:
+    version: '1.70.0'
+  releaseName: 'cost-analyzer'
+Values:
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    paths: ["/"] # There's no need to route specifically to the pods-- we have an nginx deployed that handles routing
+    hosts:
+      - cost-analyzer.local
+    tls: []
+    #  - secretName: cost-analyzer-tls
+    #    hosts:
+    #      - cost-analyzer.local
+
