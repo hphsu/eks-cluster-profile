@@ -33,7 +33,7 @@ spec:
     extraArgs:
       "node-group-auto-discovery": "asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eks-cluster"
       "scale-down-utilization-threshold": "0.8"
-      "scale-down-unneeded-time": "2m"
+      "scale-down-unneeded-time": "10m"
       "skip-nodes-with-local-storage": "false"
       "skip-nodes-with-system-pods": "false"
       "expander": "priority"
