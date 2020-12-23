@@ -1,0 +1,19 @@
+---
+apiVersion: 'helm.fluxcd.io/v1'
+kind: 'HelmRelease'
+metadata:
+  annotations:
+    filter.fluxcd.io/chart-image: 'semver:~0'
+    fluxcd.io/automated: 'true'
+  name: aws-node-termination-handler
+  namespace: 'kube-system'
+spec:
+  chart:
+    name: aws-node-termination-handler
+    repository: 'https://aws.github.io/eks-charts'
+    version: '0.13.1'
+  releaseName: aws-node-termination-handler
+  values:
+    podTerminationGracePeriod: 120
+    taintNode: true
+
