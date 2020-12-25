@@ -14,7 +14,7 @@ spec:
     version: '0.13.1'
   releaseName: aws-node-termination-handler
   values:
-    enableRebalanceMonitoring: true
+    enableRebalanceMonitoring: false
     enableScheduledEventDraining: true
     podTerminationGracePeriod: 120
     taintNode: true
