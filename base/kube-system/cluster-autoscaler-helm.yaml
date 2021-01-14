@@ -50,5 +50,7 @@ spec:
           - .*-nodegroup-spot-medium.*
         40:
           - .*-nodegroup-spot-large.*
+        45:
+          - .*-nodegroup-spot-m5-large.*
         50:
           - .*-nodegroup-spot-r5-large.*
