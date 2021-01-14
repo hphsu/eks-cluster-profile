@@ -65,12 +65,11 @@ Values:
     # Kubecost alerting configuration
     # Ref: http://docs.kubecost.com/alerts
     alertConfigs:
-      enabled: false # the example values below are never read unless enabled is set to true
+      enabled: true # the example values below are never read unless enabled is set to true
       frontendUrl: http://localhost:9090 # optional, used for linkbacks
       slackWebhookUrl: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX # optional, used for Slack alerts
       globalAlertEmails:
-        - recipient@example.com
-        - additionalRecipient@example.com
+        - francishsu@cwgv.com.tw
       alerts:
         # Daily namespace budget alert on namespace `kubecost`
         - type: budget # supported: budget, recurringUpdate
@@ -79,8 +78,8 @@ Values:
           aggregation: namespace
           filter: kubecost
           ownerContact: # optional, overrides globalAlertEmails default
-            - owner@example.com
-            - owner2@example.com
+            - francishsu@cwgv.com.tw
+            - francishsu@cwgv.com.tw
           # Daily cluster budget alert (clusterCosts alert) on cluster `cluster-one`
         - type: budget
           threshold: 200.8 # optional, required for budget alerts
@@ -108,7 +107,7 @@ Values:
     # Set saved report(s) accessible from reports.html
     # Ref: http://docs.kubecost.com/saved-reports
   savedReports:
-    enabled: false # If true, overwrites report parameters set through UI
+    enabled: true # If true, overwrites report parameters set through UI
     reports:
       - title: "Example Saved Report 0"
         window: "today"
