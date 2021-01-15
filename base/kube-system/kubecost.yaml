@@ -34,7 +34,7 @@ Values:
       kubernetes.io/tls-acme: "true"
     paths: [ "/" ] # There's no need to route specifically to the pods-- we have an nginx deployed that handles routing
     hosts:
-      - cost.cwgv.org.tw
+      - kubecost.cwgv.org.tw
     tls: [ ]
     #  - secretName: cost-analyzer-tls
     #    hosts:
