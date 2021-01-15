@@ -104,9 +104,9 @@ spec:
           #    hostPort: 8125
           #    protocol: UDP
           resources:
-            limits:
-              cpu:  200m
-              memory: 200Mi
+            #limits:
+            #  cpu:  200m
+            #  memory: 200Mi
             #requests:
             #  cpu: 200m
             #  memory: 200Mi
@@ -576,8 +576,8 @@ spec:
             - name: CI_VERSION
               value: "k8s/1.2.4"
           resources:
-            limits:
-              memory: 400Mi
+            #limits:
+            #  memory: 400Mi
             #requests:
             #  cpu: 100m
             #  memory: 200Mi
