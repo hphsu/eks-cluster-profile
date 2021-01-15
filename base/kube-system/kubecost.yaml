@@ -7,7 +7,7 @@ metadata:
     filter.fluxcd.io/chart-image: 'semver:~0'
     fluxcd.io/automated: 'true'
   name: cost-analyzer
-  namespace: 'kube-system'
+  namespace: 'kubecost'
 spec:
   chart:
     name: 'cost-analyzer'
@@ -41,7 +41,7 @@ Values:
     #      - cost-analyzer.local
   # zone: cluster.local (use only if your DNS server doesn't live in the same zone as kubecost)
   prometheus:
-    enabled: true # If false, Prometheus will not be installed -- only actively supported on paid Kubecost plans
+    enabled: false # If false, Prometheus will not be installed -- only actively supported on paid Kubecost plans
     fqdn: http://cost-analyzer-prometheus-server.default.svc #example fqdn. Ignored if enabled: true
     # insecureSkipVerify : false # If true, kubecost will not check the TLS cert of prometheus
     # queryServiceBasicAuthSecretName: dbsecret # kubectl create secret generic dbsecret -n kubecost --from-file=USERNAME --from-file=PASSWORD
@@ -259,7 +259,7 @@ Values:
 
   service:
     type: ClusterIP
-    port: 9999 #9090
+    port: 9090
     targetPort: 9090
     # nodePort:
     labels: { }
