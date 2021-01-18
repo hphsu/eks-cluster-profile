@@ -30,6 +30,10 @@ spec:
     fullnameOverride: "cluster-autoscaler"
     autoDiscovery:
       clusterName: eks-cluster
+    replicaCount: 2
+    podDisruptionBudget: |
+      maxUnavailable: 1
+      # minAvailable: 2
     extraArgs:
       "node-group-auto-discovery": "asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eks-cluster"
       "scale-down-utilization-threshold": "0.8"
