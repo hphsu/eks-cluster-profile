@@ -47,14 +47,19 @@ spec:
       pspEnabled: true
     expanderPriorities: |
         10:
-          - .*on-demand-medium.*
+          - .*
+        15:
+          - .*ondemand-medium.*
         20:
-          - .*on-demand-large.*
+          - .*ondemand-large.*
+        25:
+          - .*spot-medium.*
         30:
-          - .*-nodegroup-spot-medium.*
+          - .*spot-r5-large.*
+        35:
+          - .*spot-m5-large.*
         40:
-          - .*-nodegroup-spot-large.*
+          - .*spot-xlarge.*
         45:
-          - .*-nodegroup-spot-m5-large.*
-        50:
-          - .*-nodegroup-spot-r5-large.*
+          - .*spot-large.*
+
