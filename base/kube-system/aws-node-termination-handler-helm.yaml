@@ -11,19 +11,11 @@ spec:
   chart:
     name: aws-node-termination-handler
     repository: 'https://aws.github.io/eks-charts'
-    version: '0.13.1'
+    version: '0.13.3'
   releaseName: aws-node-termination-handler
   values:
-    enableRebalanceMonitoring: false
+    enableRebalanceMonitoring: true
     enableScheduledEventDraining: true
     podTerminationGracePeriod: 120
     taintNode: true
-    
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "50m"
-      limits:
-        memory: "128Mi"
-        cpu: "100m"
 

@@ -8,32 +8,19 @@ spec:
   targetNamespace: kube-system
   chart:
     repository: https://kubernetes.github.io/autoscaler
-    name: cluster-autoscaler-chart
-    version: 1.1.1
+    name: cluster-autoscaler
+    version: 9.3.2
   values:
     podAnnotations:
       "prometheus.io/scrape": "true"
       "prometheus.io/port": "8085"
       "cluster-autoscaler.kubernetes.io/safe-to-evict": "false"
-    resources:
-      requests:
-        cpu: "100m"
-        memory: "300Mi"
-      limits:
-        cpu: "1000m"
-        memory: "512Mi"
-    image:
-      repository: "k8s.gcr.io/autoscaling/cluster-autoscaler"
-      tag: "v1.17.3"
     priorityClassName: "system-cluster-critical"
     awsRegion: "ap-northeast-1"
     fullnameOverride: "cluster-autoscaler"
     autoDiscovery:
       clusterName: eks-cluster
     replicaCount: 2
-    #podDisruptionBudget: |
-    #  maxUnavailable: 1
-    #  # minAvailable: 2
     extraArgs:
       "node-group-auto-discovery": "asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eks-cluster"
       "scale-down-utilization-threshold": "0.8"
