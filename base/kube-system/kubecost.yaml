@@ -41,7 +41,7 @@ Values:
     #      - cost-analyzer.local
   # zone: cluster.local (use only if your DNS server doesn't live in the same zone as kubecost)
   prometheus:
-    enabled: false # If false, Prometheus will not be installed -- only actively supported on paid Kubecost plans
+    enabled: true # If false, Prometheus will not be installed -- only actively supported on paid Kubecost plans
     fqdn: http://cost-analyzer-prometheus-server.default.svc #example fqdn. Ignored if enabled: true
     # insecureSkipVerify : false # If true, kubecost will not check the TLS cert of prometheus
     # queryServiceBasicAuthSecretName: dbsecret # kubectl create secret generic dbsecret -n kubecost --from-file=USERNAME --from-file=PASSWORD
@@ -65,11 +65,11 @@ Values:
     # Kubecost alerting configuration
     # Ref: http://docs.kubecost.com/alerts
     alertConfigs:
-      enabled: true # the example values below are never read unless enabled is set to true
+      enabled: false # the example values below are never read unless enabled is set to true
       frontendUrl: http://localhost:9090 # optional, used for linkbacks
       slackWebhookUrl: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX # optional, used for Slack alerts
       globalAlertEmails:
-        - francishsu@cwgv.com.tw
+        - francis.hsu@gmail.com
       alerts:
         # Daily namespace budget alert on namespace `kubecost`
         - type: budget # supported: budget, recurringUpdate
@@ -78,8 +78,8 @@ Values:
           aggregation: namespace
           filter: kubecost
           ownerContact: # optional, overrides globalAlertEmails default
-            - francishsu@cwgv.com.tw
-            - francishsu@cwgv.com.tw
+            - owner@example.com
+            - owner2@example.com
           # Daily cluster budget alert (clusterCosts alert) on cluster `cluster-one`
         - type: budget
           threshold: 200.8 # optional, required for budget alerts
@@ -107,7 +107,7 @@ Values:
     # Set saved report(s) accessible from reports.html
     # Ref: http://docs.kubecost.com/saved-reports
   savedReports:
-    enabled: true # If true, overwrites report parameters set through UI
+    enabled: false # If true, overwrites report parameters set through UI
     reports:
       - title: "Example Saved Report 0"
         window: "today"
@@ -335,7 +335,7 @@ Values:
       persistentVolume:
         enabled: true
     nodeExporter:
-      enabled: false
+      enabled: true
     pushgateway:
       enabled: false
       persistentVolume:
@@ -622,7 +622,6 @@ Values:
   #    key: ""
   #    enabled: false
   #    secretname: productkeysecret # create a secret out of a file named productkey.json of format { "key": "kc-b1325234" }
-
 
 
 
