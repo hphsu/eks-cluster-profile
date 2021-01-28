@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kubecost
-  namespace: kube-system
+  namespace: kubecost
   annotations:
     # Annotation doc: https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/guide/ingress/annotations/#annotations
     # use "alb" for AWS Load Balancer controller https://github.com/kubernetes-sigs/aws-load-balancer-controller
@@ -14,7 +14,7 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-1:594348282413:certificate/35e3763c-bd1a-495c-b70d-509e5a10a7fc,arn:aws:acm:ap-northeast-1:594348282413:certificate/92befd99-d6c2-42ef-955d-6b719248cf3e,arn:aws:acm:ap-northeast-1:594348282413:certificate/11518b70-540b-4112-8c13-003b54869008
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     #alb.ingress.kubernetes.io/inbound-cidrs: 100.64.32.0/19,10.212.134.0/24,10.100.0.0/24,192.168.30.0/24,192.168.2.0/24,192.168.3.0/24,192.168.6.0/24
-    alb.ingress.kubernetes.io/inbound-cidrs: 100.64.32.0/19,10.212.134.0/24,10.100.0.0/24,192.168.30.0/24,192.168.2.0/24,192.168.3.0/24,192.168.6.0/24,203.69.196.229/24,118.160.138.218/24,61.222.119.188/24,61.219.179.207/24,36.229.136.228/24,118.160.134.138/24
+    #alb.ingress.kubernetes.io/inbound-cidrs: 100.64.32.0/19,10.212.134.0/24,10.100.0.0/24,192.168.30.0/24,192.168.2.0/24,192.168.3.0/24,192.168.6.0/24,203.69.196.229/24,118.160.138.218/24,61.222.119.188/24,61.219.179.207/24,36.229.136.228/24,118.160.134.138/24
 
     # this will update route53
     external-dns.alpha.kubernetes.io/hostname: kubecost.cwgv.org.tw

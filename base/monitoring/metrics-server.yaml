@@ -9,7 +9,8 @@ spec:
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: metrics-server
-    version: 5.3.3
+    version: 5.3.4
   values:
+    replicas: 2
     extraArgs:
       kubelet-preferred-address-types: InternalIP
