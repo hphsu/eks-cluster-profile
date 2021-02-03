@@ -1,0 +1,17 @@
+---
+apiVersion: 'helm.fluxcd.io/v1'
+kind: 'HelmRelease'
+metadata:
+  annotations:
+    filter.fluxcd.io/chart-image: 'semver:~0'
+    fluxcd.io/automated: 'true'
+  name: aws-cloudwatch-metrics
+  namespace: 'amazon-cloudwatch'
+spec:
+  chart:
+    name: aws-cloudwatch-metrics
+    repository: 'https://aws.github.io/eks-charts'
+    version: '0.0.3'
+  releaseName: aws-cloudwatch-metrics
+  values:
+    clusterName: 'eks-cluster'

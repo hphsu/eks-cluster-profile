@@ -29,6 +29,7 @@ spec:
       "skip-nodes-with-system-pods": "false"
       "expander": "priority"
       "cloud-provider": "aws"
+      "expendable-pods-priority-cutoff": "-10"
     rbac:
       create: true
       pspEnabled: true
