@@ -37,7 +37,7 @@ spec:
       pspEnabled: false
     image:
       repository: 'bitnami/external-dns'
-      tag: '0.10.1'
+      tag: '0.10.2'
     metrics:
       enabled: true
       serviceMonitor:
