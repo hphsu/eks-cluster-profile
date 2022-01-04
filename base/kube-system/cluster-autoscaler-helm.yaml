@@ -37,17 +37,21 @@ spec:
         10:
           - .*
         15:
-          - .*ondemand-medium.*
+          - .*ondemand-xlarge.*
         20:
           - .*ondemand-large.*
-        25:
-          - .*spot-medium.*
         30:
-          - .*spot-r5-large.*
+          - .*spot-large-r5.*
         35:
-          - .*spot-m5-large.*
+          - .*spot-large-m5.*
         40:
-          - .*spot-xlarge.*
+          - .*spot-xlarge-capacity.*
         45:
-          - .*spot-large.*
+          - .*spot-large-capacity.*
+        55:
+          - .*spot-xlarge-price.*
+        60:
+          - .*spot-large-price.*
+        80:
+          - .*managed-spot-large.*
 
