@@ -9,7 +9,8 @@ spec:
   chart:
     repository: https://kubernetes.github.io/autoscaler
     name: cluster-autoscaler
-    version: 9.3.2
+    #version: 9.3.2
+    version: 9.11.0
   values:
     podAnnotations:
       "prometheus.io/scrape": "true"
@@ -24,7 +25,7 @@ spec:
     extraArgs:
       "node-group-auto-discovery": "asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eks-cluster"
       "scale-down-utilization-threshold": "0.8"
-      "scale-down-unneeded-time": "9m"
+      "scale-down-unneeded-time": "10m"
       "skip-nodes-with-local-storage": "false"
       "skip-nodes-with-system-pods": "false"
       "expander": "priority"
@@ -34,24 +35,23 @@ spec:
       create: true
       pspEnabled: true
     expanderPriorities: |
-        10:
-          - .*
-        15:
-          - .*ondemand-xlarge.*
-        20:
-          - .*ondemand-large.*
-        30:
-          - .*spot-large-r5.*
-        35:
-          - .*spot-large-m5.*
-        40:
-          - .*spot-xlarge-capacity.*
-        45:
-          - .*spot-large-capacity.*
-        55:
-          - .*spot-xlarge-price.*
-        60:
-          - .*spot-large-price.*
         80:
           - .*managed-spot-large.*
+        70:
+          - .*spot-large-price.*
+        60:
+          - .*spot-xlarge-price.*
+        20:
+          - .*ondemand-large.*
+        15:
+          - .*ondemand-xlarge.*
+        10:
+          - .*
+
+
+
+
+
+
+
 
