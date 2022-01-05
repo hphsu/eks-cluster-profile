@@ -36,9 +36,9 @@ spec:
       pspEnabled: true
     expanderPriorities: |
         50:
-          - .*spot-large.*
+          - .*spot-large-NodeGroup.*
         45:
-          - .*spot-xlarge.*
+          - .*spot-xlarge-NodeGroup.*
         40:
           - .*ondemand-large.*
         35:
