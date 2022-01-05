@@ -25,7 +25,7 @@ spec:
     extraArgs:
       "node-group-auto-discovery": "asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eks-cluster"
       "scale-down-utilization-threshold": "0.8"
-      "scale-down-unneeded-time": "10m"
+      "scale-down-unneeded-time": "5m"
       "skip-nodes-with-local-storage": "false"
       "skip-nodes-with-system-pods": "false"
       "expander": "priority"
@@ -36,14 +36,12 @@ spec:
       pspEnabled: true
     expanderPriorities: |
         50:
-          - eks-f2bf12c3-e252-bc75-0408-ab03fdecbfdb
+          - .*spot-large.*
+        45:
+          - .*spot-xlarge.*
         40:
-          - .*spot-large-price.*
-        30:
-          - .*spot-xlarge-price.*
-        20:
           - .*ondemand-large.*
-        15:
+        35:
           - .*ondemand-xlarge.*
         10:
           - .*
