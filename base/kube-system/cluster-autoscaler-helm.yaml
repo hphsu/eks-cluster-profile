@@ -35,11 +35,11 @@ spec:
       create: true
       pspEnabled: true
     expanderPriorities: |
-        80:
-          - .*managed-spot-large.*
-        70:
+        50:
+          - eks-f2bf12c3-e252-bc75-0408-ab03fdecbfdb
+        40:
           - .*spot-large-price.*
-        60:
+        30:
           - .*spot-xlarge-price.*
         20:
           - .*ondemand-large.*
