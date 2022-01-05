@@ -24,7 +24,7 @@ spec:
     replicaCount: 2
     extraArgs:
       "node-group-auto-discovery": "asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eks-cluster"
-      "scale-down-utilization-threshold": "0.8"
+      "scale-down-utilization-threshold": "0.9"
       "scale-down-unneeded-time": "1m"
       "skip-nodes-with-local-storage": "false"
       "skip-nodes-with-system-pods": "false"
