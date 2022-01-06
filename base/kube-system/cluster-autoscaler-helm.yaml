@@ -36,18 +36,38 @@ spec:
       pspEnabled: true
     expanderPriorities: |
         50:
-          - .*spot-large-NodeGroup.*
+          - .*spot-large-price-NodeGroup.*
+        50:
+          - .*spot-large-capacity-NodeGroup.*
+
         45:
-          - .*spot-xlarge-NodeGroup.*
+          - .*spot-xlarge-price-NodeGroup.*
+        45:
+          - .*spot-xlarge-capacity-NodeGroup.*
+
         40:
-          - .*ondemand-large.*
+          - eks-e8bf1765-fd57-1190-d3d3-137a8ed88dc3 # managed-spot-large
         35:
-          - .*ondemand-xlarge.*
+          - eks-5ebf1766-0692-4bcf-816b-ca2d21402c5f # managed-spot-xlarge
+
+        30:
+          - eks-eebf1765-e85c-d848-a382-2c884302a84b # managed-ondemand-large
+        25:
+          - eks-56bf1766-0a27-a3ba-b058-8b48fdeb3940 # managed-ondemand-xlarge
         10:
           - .*
 
-
-
+# output of $ eksctl get nodegroup --cluster eks-cluster | awk {'print $10'}
+#managed-ondemand-large eks-eebf1765-e85c-d848-a382-2c884302a84b
+#managed-ondemand-xlarge eks-56bf1766-0a27-a3ba-b058-8b48fdeb3940
+#managed-spot-large eks-e8bf1765-fd57-1190-d3d3-137a8ed88dc3
+#managed-spot-xlarge eks-5ebf1766-0692-4bcf-816b-ca2d21402c5f
+#
+#spot-large  eksctl-eks-cluster-nodegroup-spot-large-NodeGroup-I0ZE6FUM2UR1
+#spot-large-capacity eksctl-eks-cluster-nodegroup-spot-large-capacity-NodeGroup-7MB1WYZZUDY5
+#spot-large-price  eksctl-eks-cluster-nodegroup-spot-large-price-NodeGroup-1PKUKABPGGFDN
+#spot-xlarge-capacity  eksctl-eks-cluster-nodegroup-spot-xlarge-capacity-NodeGroup-CQTHTD9M7CL6
+#spot-xlarge-price eksctl-eks-cluster-nodegroup-spot-xlarge-price-NodeGroup-1CCB7Q98UBC65
 
 
 
