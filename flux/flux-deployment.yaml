@@ -150,7 +150,6 @@ spec:
         - --git-label=flux
         - --git-user=git
         - --git-email=francis.hsu@gmail.com
-	- --git-poll-interval=1200000000s
 
         # Include these two to enable git commit signing
         # - --git-gpg-key-import=/root/gpg-import
@@ -160,7 +159,7 @@ spec:
         # - --git-verify-signatures
 
         # Tell flux it has readonly access to the repo (default `false`)
-        - --git-readonly
+        #- --git-readonly
 
         # Instruct flux where to put sync bookkeeping (default "git", meaning use a tag in the upstream git repo)
         # - --sync-state=git
