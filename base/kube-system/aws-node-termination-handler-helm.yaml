@@ -12,7 +12,7 @@ spec:
     name: aws-node-termination-handler
     repository: 'https://aws.github.io/eks-charts'
     #version: '0.13.3'
-    version: '0.16.0'
+    version: '0.20.3'
   releaseName: aws-node-termination-handler
   values:
     enableRebalanceMonitoring: false
