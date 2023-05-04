@@ -35,9 +35,9 @@ spec:
       ## Podsecuritypolicy
       ##
       pspEnabled: false
-    image:
-      repository: 'bitnami/external-dns'
-      tag: '0.10.2'
+    #image:
+    #  repository: 'bitnami/external-dns'
+    #  tag: '0.10.2'
     metrics:
       enabled: true
       serviceMonitor:
