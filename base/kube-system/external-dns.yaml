@@ -31,7 +31,7 @@ spec:
       serviceAccountAnnotations: eks.amazonaws.com/role-arn='arn:aws:iam::594348282413:policy/CwgvRoute53ChangeRecord'
       ## RBAC API version
       ##
-      apiVersion: v1beta1
+      apiVersion: v1
       ## Podsecuritypolicy
       ##
       pspEnabled: false
