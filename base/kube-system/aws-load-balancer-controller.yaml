@@ -12,11 +12,11 @@ spec:
   chart:
     name: 'aws-load-balancer-controller'
     repository: 'https://aws.github.io/eks-charts'
-    version: '1.4.1'
+    version: '1.4.8'
   releaseName: 'aws-load-balancer-controller'
   values:
     clusterName: eks-cluster
-    replicaCount: 3
+    replicaCount: 2
     ingressClass: alb
     logLevel: info # info or debug
     resources: { }
